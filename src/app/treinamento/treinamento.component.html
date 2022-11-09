@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<header class="p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+        <img class="logo" src="https://ndd.tech/wp-content/uploads/2021/01/Logo-NDD-Padrao-1-1024x512.png" alt="">
+      </a>
+      <ul class="nav nav-pills col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li class="nav-item m-1"><a routerLink="/home" class="nav-link" aria-current="page">Inicio</a></li>
+        <li class="nav-item m-1"><a routerLink="/treinamentos" class="nav-link active" aria-current="page">Meus cursos</a></li>
+      </ul>
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Titulo do Curso</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <div class="text-center">
+      <iframe width="640" height="480" src="https://www.youtube.com/embed/vbs7jKRMuiA" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</ng-template>
+
+<body>
+  <div class="row mt-2">
+    <div class="col-1"></div>
+    <div class="col-10 bg-secondary p-4">
+      <div class="container d-flex justify-content-between">
+        <div>
+          <h4>Olá, Ed1000son!!</h4>
+        </div>
+        <div>
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="container col-10 mt-4 mb-2">
+      <h4>Meus Cursos</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="container col-10 mt-4 mb-2 d-flex">
+      <button type="button" class="btn btn-outline-primary m-1">Todos</button>
+      <button type="button" class="btn btn-outline-primary m-1">Em Andamento</button>
+      <button type="button" class="btn btn-outline-primary m-1">Finalizados</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 m-1">
+      <div class="d-flex">
+        <div class="container col-6 card shadow m-1 p-3">
+          <div class="d-flex justify-content-between">
+            <h6 class="p-1">Título do curso</h6>
+            <button type="button" class="btn btn-danger">X</button>
+          </div>
+          <img class="" src="https://ndd.tech/wp-content/uploads/2021/01/Logo-NDD-Padrao-1-1024x512.png" alt="">
+          <p class="overflow-auto p-1 descricaoCurso">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Architecto eaque consectetur nostrum impedit earum at harum. Reiciendis suscipit soluta, ab, repellat ad
+            dolorem similique.</p>
+          <div class="">
+            <button type="button" class="btn btn-success" (click)="openXl(content)">Assistir</button>
+          </div>
+        </div>
+        <div class="container col-6 card shadow m-1 p-3">
+          <div class="d-flex justify-content-between">
+            <h6 class="p-1">Título do curso</h6>
+            <button type="button" class="btn btn-danger">X</button>
+          </div>
+          <img class="" src="https://ndd.tech/wp-content/uploads/2021/01/Logo-NDD-Padrao-1-1024x512.png" alt="">
+          <p class="overflow-auto p-1 descricaoCurso">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Architecto eaque consectetur nostrum impedit earum at harum. Reiciendis suscipit soluta, ab, repellat ad
+            dolorem similique.</p>
+          <div class="">
+            <button type="button" class="btn btn-success" (click)="openXl(content)">Assistir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDD Treinamentos</title>
+</head>
+<!-- modal -->
+<ng-template (ngModel)="trainingModel" #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"> {{ trainingModel.title }}</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <div class="text-center">
+        <img class="imgfluid imgCard" src="{{ trainingModel.url }}" alt="">
+        <p>{{ trainingModel.description }}</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Save click')">Quero fazer este curso</button>
+    </div>
+</ng-template>
+
+<!-- header -->
+<header class="p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+        <img class="logo" src="https://ndd.tech/wp-content/uploads/2021/01/Logo-NDD-Padrao-1-1024x512.png" alt="">
+      </a>
+      <ul class="nav nav-pills col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li class="nav-item m-1"><a routerLink="/home" class="nav-link active" aria-current="page">Inicio</a></li>
+        <li class="nav-item m-1"><a routerLink="/treinamentos" class="nav-link" aria-current="page">Meus cursos</a></li>
+      </ul>
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="row mt-2">
+      <div class="col-1"></div>
+      <div class="col-10 bg-secondary p-4">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4>Olá, Ed1000son!!</h4>
+          </div>
+          <div>
+            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="container col-10 mt-4 mb-2 d-flex">
+      <div class="m-2">
+        <button type="button" class="btn btn-outline-primary">Todos</button>
+      </div>
+      <div ngbDropdown class="d-inline-block m-2">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          Filtrar
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Data de envio</button>
+          <button ngbDropdownItem>Categoria</button>
+          <button ngbDropdownItem>Outro Filtro</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div class="d-flex flex-wrap justify-content-center">
+        <app-item-training [item]="training" class="col-2 container card shadow m-1 p-1 " *ngFor="let training of trainings" (click)="openXl(content, training)" ></app-item-training>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
