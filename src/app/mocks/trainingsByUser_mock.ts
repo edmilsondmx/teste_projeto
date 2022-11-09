@@ -41,4 +41,20 @@ export const TRAININGBYUSER_MOCK: ITraningByUser[] = [
         },
     ],
   },
+  {
+    userId: 2,
+    trainings: [
+      {
+        id: 1,
+        url: 'https://certificadocursosonline.com/wp-content/uploads/2018/07/Curso-de-Manutenc%CC%A7a%CC%83o-de-Computadores.jpg',
+        title: 'Curso de Manutenção de Computadores',
+        description:
+          'Architecto eaque consectetur nostrum impedit earum at harum. Reiciendis suscipit soluta, ab, repellat ad',
+        teacher: 'Carlos Silva',
+        duration: 20,
+        status: 'andamento',
+        category: 'tecnologia',
+      },
+    ]
+  }
 ];

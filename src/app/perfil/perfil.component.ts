@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
 import { TRAINING_MOCK } from '../mocks/training_mock';
 import { USER_MOCK } from '../mocks/user_mock';
 import { ITraining } from '../Models/Treinamento';
@@ -17,6 +19,9 @@ export class PerfilComponent implements OnInit {
   trainings: ITraining[] = TRAINING_MOCK;
 
   trainingModel!:ITraining;
+
+  category:string = 'todos';
+  filters!:ITraining[];
 
   constructor(
     private config: NgbModalConfig, 
@@ -36,5 +41,17 @@ export class PerfilComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.filtrar();
+  }
+
+  filtrar(){
+    if(this.category != 'todos'){
+      this.filters =  this.trainings.filter( item => item.category == this.category)
+    }
+    else{
+
+      this.filters = this.trainings;
+    }
+  }
 }

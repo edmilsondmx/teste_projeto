@@ -191,7 +191,7 @@ export const TRAINING_MOCK: ITraining[] = [
     teacher: 'Ana Julia',
     duration: 80,
     status: 'disponivel',
-    category: 'comunicacao',
+    category: 'marketing',
   },
 
   {
@@ -200,7 +200,7 @@ export const TRAINING_MOCK: ITraining[] = [
     title: ' Redacao',
     description:
       'Neste curso, os alunos irão obter um conhecimento aprofundado sobre os recursos disponíveis .',
-    teacher: 'JMaria Eduarda',
+    teacher: 'Maria Eduarda',
     duration: 18,
     status: 'disponivel',
     category: 'educacao',

@@ -36,7 +36,7 @@
       </ul>
       <div ngbDropdown class="d-inline-block">
         <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
-          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          <img src="https://github.com/mdo.png" alt="mdo" width="50" height="50" class="rounded-circle">
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button ngbDropdownItem>Action - 1</button>
@@ -65,26 +65,29 @@
   <div class="row">
     <div class="col-1"></div>
     <div class="container col-10 mt-4 mb-2 d-flex">
-      <div class="m-2">
-        <button type="button" class="btn btn-outline-primary">Todos</button>
-      </div>
-      <div ngbDropdown class="d-inline-block m-2">
-        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-          Filtrar
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Data de envio</button>
-          <button ngbDropdownItem>Categoria</button>
-          <button ngbDropdownItem>Outro Filtro</button>
-        </div>
-      </div>
+      <form (change)="filtrar()">
+        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check"  id="todos" autocomplete="off" value="todos" checked>
+        <label class="btn btn-outline-primary me-2" for="todos">Todos</label>
+
+        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="tecnologia" autocomplete="off" value="tecnologia">
+        <label class="btn btn-outline-primary me-2" for="tecnologia">Tecnologia</label>
+
+        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="financas" autocomplete="off" value="financas">
+        <label class="btn btn-outline-primary me-2" for="financas">Finanças</label>
+        
+        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="idioma" autocomplete="off" value="idioma">
+        <label class="btn btn-outline-primary me-2" for="idioma">Idioma</label>
+
+        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="marketing" autocomplete="off" value="marketing">
+        <label class="btn btn-outline-primary me-2" for="marketing">Marketing</label>
+      </form>
     </div>
   </div>
   <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
       <div class="d-flex flex-wrap justify-content-center">
-        <app-item-training [item]="training" class="col-2 container card shadow m-1 p-1 " *ngFor="let training of trainings" (click)="openXl(content, training)" ></app-item-training>
+        <app-item-training [item]="training" class="col-2 container card shadow m-1 p-1 " *ngFor="let training of filters" (click)="openXl(content, training)" ></app-item-training>
       </div>
     </div>
   </div>
