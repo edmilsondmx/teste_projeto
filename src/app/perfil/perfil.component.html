@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NDD Treinamentos</title>
-</head>
+</head> -->
 <!-- modal -->
+
+
 <ng-template (ngModel)="trainingModel" #content let-c="close" let-d="dismiss">
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title"> {{ trainingModel.title }}</h4>
@@ -24,7 +26,7 @@
 </ng-template>
 
 <!-- header -->
-<header class="p-3 mb-3 border-bottom">
+<!-- <header class="p-3 mb-3 border-bottom">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
@@ -46,50 +48,49 @@
       </div>
     </div>
   </div>
-</header>
+</header> -->
 
-<body>
-  <div class="row mt-2">
-      <div class="col-1"></div>
-      <div class="col-10 bg-secondary p-4">
-        <div class="d-flex justify-content-between">
-          <div>
-            <h4>Olá, Ed1000son!!</h4>
-          </div>
-          <div>
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-          </div>
+
+<div class="row mt-2">
+    <div class="col-1"></div>
+    <div class="col-10 bg-secondary p-4">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h4>Olá {{users[0].name}}</h4>
+        </div>
+        <div>
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
         </div>
       </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="container col-10 mt-4 mb-2 d-flex">
+    <form (change)="filtrar()">
+      <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check"  id="todos" autocomplete="off" value="todos" checked>
+      <label class="btn btn-outline-primary me-2" for="todos">Todos</label>
+
+      <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="tecnologia" autocomplete="off" value="tecnologia">
+      <label class="btn btn-outline-primary me-2" for="tecnologia">Tecnologia</label>
+
+      <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="financas" autocomplete="off" value="financas">
+      <label class="btn btn-outline-primary me-2" for="financas">Finanças</label>
+      
+      <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="idioma" autocomplete="off" value="idioma">
+      <label class="btn btn-outline-primary me-2" for="idioma">Idioma</label>
+
+      <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="marketing" autocomplete="off" value="marketing">
+      <label class="btn btn-outline-primary me-2" for="marketing">Marketing</label>
+    </form>
   </div>
-  <div class="row">
-    <div class="col-1"></div>
-    <div class="container col-10 mt-4 mb-2 d-flex">
-      <form (change)="filtrar()">
-        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check"  id="todos" autocomplete="off" value="todos" checked>
-        <label class="btn btn-outline-primary me-2" for="todos">Todos</label>
-
-        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="tecnologia" autocomplete="off" value="tecnologia">
-        <label class="btn btn-outline-primary me-2" for="tecnologia">Tecnologia</label>
-
-        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="financas" autocomplete="off" value="financas">
-        <label class="btn btn-outline-primary me-2" for="financas">Finanças</label>
-        
-        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="idioma" autocomplete="off" value="idioma">
-        <label class="btn btn-outline-primary me-2" for="idioma">Idioma</label>
-
-        <input [(ngModel)]="category" type="radio" name="categoria" class="btn-check" id="marketing" autocomplete="off" value="marketing">
-        <label class="btn btn-outline-primary me-2" for="marketing">Marketing</label>
-      </form>
+</div>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="d-flex flex-wrap justify-content-center">
+      <app-item-training [item]="training" class="col-2 container card shadow m-1 p-1 " *ngFor="let training of filters" (click)="openXl(content, training)" ></app-item-training>
     </div>
   </div>
-  <div class="row">
-    <div class="col-1"></div>
-    <div class="col-10">
-      <div class="d-flex flex-wrap justify-content-center">
-        <app-item-training [item]="training" class="col-2 container card shadow m-1 p-1 " *ngFor="let training of filters" (click)="openXl(content, training)" ></app-item-training>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+</div>
+

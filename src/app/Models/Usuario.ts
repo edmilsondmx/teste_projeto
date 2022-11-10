@@ -5,4 +5,5 @@ export interface IUser{
     password:string;
     age:number;
     cpf:string;
+    image:string;
 }

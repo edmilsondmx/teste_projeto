@@ -5,7 +5,7 @@ import { TreinamentoComponent } from './treinamento/treinamento.component';
 
 const routes: Routes = [
   {
-    path:'home',
+    path:'home', 
     component:PerfilComponent
   },
   {

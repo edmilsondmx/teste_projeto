@@ -9,12 +9,13 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { ItemTrainingComponent } from './components/item-training/item-training.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     TreinamentoComponent,
     PerfilComponent,
-    ItemTrainingComponent
+    ItemTrainingComponent,
   ],
   imports: [
     BrowserModule,
