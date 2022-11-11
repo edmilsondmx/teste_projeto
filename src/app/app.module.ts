@@ -8,6 +8,7 @@ import { TreinamentoComponent } from './treinamento/treinamento.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ItemTrainingComponent } from './components/item-training/item-training.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TrainingUnitComponent } from './training-unit/training-unit.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TreinamentoComponent,
     PerfilComponent,
     ItemTrainingComponent,
+    TrainingUnitComponent,
   ],
   imports: [
     BrowserModule,
